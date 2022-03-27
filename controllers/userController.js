@@ -56,7 +56,7 @@ module.exports = {
     addFriend(req, res) {
         console.log('You are adding a friend');
         console.log(req.body);
-        Student.findOneAndUpdate(
+        user.findOneAndUpdate(
           { _id: req.params.userId },
         )
           .then((users) =>
