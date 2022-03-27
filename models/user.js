@@ -16,16 +16,28 @@ const userSchema = new Schema(
             unique: true,
             match: [/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/, 'Must match a valid email address']
         },
-        thoughts: [thoughtsSchema],
-        friends: [userSchema]
+        thoughts: [ {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought',
+            },
+        ],
+        friends: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
+        ]
         },
         {
             toJSON: {
-                getters: true
+                virtuals: true
             },
+            id: false,
         }
     );
 
-const user = model('user', userSchema);
+// Friends virtual
+userSchema.virtual("friendCount").get(function () {
+    return this.friends.length;
+});
 
 module.exports = user;
