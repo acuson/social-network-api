@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-export const app = express();
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
