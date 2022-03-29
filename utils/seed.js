@@ -5,8 +5,8 @@ const { userData, thoughtData } = require('./data');
 // Seeding thoughts
 const seedThoughts = async () => {
   for (const thought of thoughtData) {
-      const newThought = await Thought.create(thought);
-      await User.findOneAndUpdate(
+      const newThought = await thoughts.create(thought);
+      await user.findOneAndUpdate(
           { username: newThought.username },
           { $push: { thoughts: newThought._id } }
       );
@@ -15,9 +15,9 @@ const seedThoughts = async () => {
 
 // Seeding friends
 const seedFriends = async () => {
-  const friends = await User.find({}).select("_id");
+  const friends = await user.find({}).select("_id");
   for (const id of friends) {
-      await User.findOneAndUpdate(
+      await user.findOneAndUpdate(
           { _id: id },
           { $push: { friends: friends.filter(friend => friend !== id) } }
       );
@@ -39,7 +39,7 @@ connection.once('open', async () => {
   console.log('Deleted any existing users.');
 
   // Insert user data
-  await User.collection.insertMany(userData);
+  await user.collection.insertMany(userData);
   console.log('Seeded users.');
 
   // Insert thought data
