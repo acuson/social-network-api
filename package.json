@@ -1,4 +1,9 @@
 {
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node utils/seed.js"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "mongoose": "^6.2.4"
