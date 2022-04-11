@@ -46,7 +46,7 @@ Start the server: <br>
 
 View my repo here: [https://github.com/acuson/social-network-api](https://github.com/acuson/social-network-api)
 
-View video walkthrough here: [https://drive.google.com/file/d/1muAFHZHuEG0R_A-Nlk6200D_2buor3BN/view](https://drive.google.com/file/d/1muAFHZHuEG0R_A-Nlk6200D_2buor3BN/view)
+View video walkthrough here: [https://drive.google.com/file/d/1ehVzs7Nw4AanUiB8XVeuHw5w_LvWbKTJ/view](https://drive.google.com/file/d/1ehVzs7Nw4AanUiB8XVeuHw5w_LvWbKTJ/view)
 
 
 ## License
